@@ -18,8 +18,10 @@ class ImageParser(HTMLParser):
 def parseImage(data):
     parser = ImageParser()
     parser.feed(data) # data를 줌...? >> result에 값이 담김
-    dataset = set(x for x in parser.result) # parser.result들을 모두 트레이서해서 dataset에 set으로 담음
-    print('\n'.join(sorted(dataset))) # 어디에 쓰는거지??
+
+    # # 하단 부분은 왜 작성한건지 아직 모르겠음
+    # dataset = set(x for x in parser.result) # parser.result들을 모두 트레이서해서 dataset에 set으로 담음
+    # print('\n'.join(sorted(dataset))) # 어디에 쓰는거지??
 
 def main():
     url = 'http://www.google.co.kr'
