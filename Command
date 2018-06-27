@@ -2,7 +2,8 @@ install django
 
 (venv) D:\pythonPycharm\web>django-admin startproject Python_web
 
-(venv) D:\pythonPycharm\web>cd Python_web >> 하지말자 ... 죄다 프로젝트 바로 밑 경로로 옮김 ㅠ
+(venv) D:\pythonPycharm\web>cd Python_web
+>> 하지말자...  결국 잘 안되서, 나중에 프로젝트 바로 밑 경로로 옮김 ㅠ
 
 (venv) D:\pythonPycharm\web\Python_web>python manage.py startapp emaillist
 
@@ -11,7 +12,7 @@ install django
 TIME_ZONE = 'Asia/Seoul'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.mysql',##
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME' : 'django_db',
         'USER' : 'django_user',
@@ -46,7 +47,6 @@ Password (again):
 Superuser created successfully.
 
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,11 +54,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'emaillist'
+    'emaillist'##
 ]
 
 
->> Admin 페이지에 테이블  반영 (emaillist/admin.py)
+>> Admin 페이지에 테이블 반영 (emaillist/admin.py)
 from emaillist.models import Emaillist
 admin.site.register(Emaillist)
 
