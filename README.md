@@ -26,4 +26,4 @@ https://docs.djangoproject.com/en/2.0/topics/db/models/
   - 보통, views.py에 작성되지 만 다른 파일에 작성하는 것도 가능하다.
 
 
-<img src="https://github.com/twooopark/DjangoPractice/blob/master/dataflow.JPG" width="300px" height="200px" />
+<img src="https://github.com/twooopark/DjangoPractice/blob/master/dataflow.JPG" width="700px" height="600px" />
