@@ -1,0 +1,86 @@
+install django
+
+(venv) D:\pythonPycharm\web>django-admin startproject Python_web
+
+(venv) D:\pythonPycharm\web>cd Python_web >> 하지말자 ... 죄다 프로젝트 바로 밑 경로로 옮김 ㅠ
+
+(venv) D:\pythonPycharm\web\Python_web>python manage.py startapp emaillist
+
+
+>> setting.py
+TIME_ZONE = 'Asia/Seoul'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME' : 'django_db',
+        'USER' : 'django_user',
+        'PASSWORD' : 'manager',
+        'HOST' : '127.0.0.1',
+        'PORT' : '3306'
+    }
+}
+
+django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.
+Did you install mysqlclient?
+
+install mysqlclient
+
+# 데이터베이스와 관련된 변경 사항은 장고에 반드시 반영해 주어야 한다
+(venv) D:\pythonPycharm\web\Python_web>python manage.py migrate
+
+
+(venv) D:\pythonPycharm\web\Python_web>python manage.py runserver 0.0.0.0:8000
+
+
+>> http://127.0.0.1:8000/
+>> http://127.0.0.1:8000/admin
+>> 접속 가능
+
+
+(venv) D:\pythonPycharm\web\Python_web>python manage.py createsuperuser
+Username (leave blank to use 'bit-user'): admin
+Email address: twooo.park@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'emaillist'
+]
+
+
+>> Admin 페이지에 테이블  반영 (emaillist/admin.py)
+from emaillist.models import Emaillist
+admin.site.register(Emaillist)
+
+
+(venv) D:\pythonPycharm\web\Python_web>python manage.py makemigrations
+Migrations for 'emaillist':
+  emaillist\migrations\0001_initial.py
+    - Create model Emaillist
+
+
+(venv) D:\pythonPycharm\web\Python_web>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, emaillist, sessions
+Running migrations:
+  Applying emaillist.0001_initial... OK
+
+
+
+>> http://127.0.0.1:8000/admin/emaillist/emaillist/ 에서 확인
+
+
+
+
+
+urls.py, views.py --> mapping
