@@ -109,6 +109,8 @@ Running migrations:
 urls.py, views.py --> mapping
 ```
 
+#### 1.17 DATA FLOW... Directory
+<img src="https://github.com/twooopark/DjangoPractice/blob/master/dataflow.JPG" width="700px" height="600px" />
 
 ****
 2. GUESTBOOK 설정 및 세팅
@@ -179,4 +181,3 @@ https://docs.djangoproject.com/en/2.0/topics/db/models/
   - 응답은 HTML, 404 에러, 리다이렉트 등 다양한 응답이 가능하다.
   - 보통, views.py에 작성되지 만 다른 파일에 작성하는 것도 가능하다.
 
-<img src="https://github.com/twooopark/DjangoPractice/blob/master/dataflow.JPG" width="700px" height="600px" />
