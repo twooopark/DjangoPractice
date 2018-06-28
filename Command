@@ -92,7 +92,9 @@ urls.py, views.py --> mapping
 
 
 
----------------GUEST BOOK----------------
+---------------GUESTBOOK----------------
+>> templates 경로 수정
+
 >> guestbook app 추가
 (venv) D:\pythonPycharm\web>python manage.py startapp guestbook
 
@@ -100,10 +102,10 @@ urls.py, views.py --> mapping
 
 >> 모델 등록 (admin.py)
 
->> DB 적용(?)
+>> makemigrations : models.py에서 적용한 변경사항이나 추가된 혹은 삭제된 사항들을 감지하여 파일로 생성
 (venv) D:\pythonPycharm\web>python manage.py makemigrations
 
->> 장고에도 적용(?)
+>> migrate : 적용되지 않은 migrations들을(설정값들을) 적용시키는 역할
 (venv) D:\pythonPycharm\web>python manage.py migrate
 
 >> mapping (urls.py, views.py, templates/....html)

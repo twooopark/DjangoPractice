@@ -18,17 +18,20 @@
 		</tr>
 	</table>
 	</form>
+	<!-- guestbook 리스트 -->
+	{% for guestbook in guestbook_list %}
 	<br>
 	<table width=510 border=1>
 		<tr>
-			<td>[1]</td>
-			<td>안대혁</td>
-			<td>2013-01-15</td>
+			<td>{{ guestbook.id }}</td>
+			<td>{{ guestbook.name }}</td>
+			<td>{{ guestbook.regdate }}</td>
 			<td><a href="/guestbook/deleteform">삭제</a></td>
 		</tr>
 		<tr>
-			<td colspan=4>안녕하세요</td>
+			<td colspan=4>{{ guestbook.message }}</td>
 		</tr>
 	</table>
+	{% endfor %}
 </body>
 </html>
