@@ -1,5 +1,6 @@
-1. 설정 및 셋팅
--------------
+****
+1. django, emaillist 설정 및 셋팅
+
 #### 1.1 django 설치
   ```  pip install django ```
 
@@ -109,8 +110,9 @@ urls.py, views.py --> mapping
 ```
 
 
----------------GUESTBOOK----------------
+****
 2. GUESTBOOK 설정 및 세팅
+
 #### 2.1 templates 경로 수정
 
 #### 2.2 guestbook app 추가
