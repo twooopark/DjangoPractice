@@ -20,3 +20,31 @@ def add(request):
 
     # 응답
     return HttpResponseRedirect('/guestbook')
+
+def delete(request):
+    guestbook = Guestbook()
+    # GET 방식 처리방법...
+    # https://github.com/tschellenbach/Django-facebook/pull/564/commits/32f5a0c13add2e2699becbe1459bab803ff313f2
+    # 기존 >> print("request.REQUEST.get('name'): ", request.REQUEST.get('name'))
+    # 최신 >> print("request.POST.get('name', request.GET.get('name')): ", request.POST.get('name', request.GET.get('name')))
+    guestbook.name = request.POST.get('name', request.GET.get('name'))
+    guestbook.password = request.POST.get('password')
+
+    print(guestbook)
+    # objects 에 필터를 적용 할 수 있다.
+    # print(Guestbook.objects.filter(name=request).delete())
+    instance = Guestbook.objects.filter(name=guestbook.name).get()
+    print("instance.password:", instance.password)
+    if guestbook.password == instance.password :
+        instance.delete()
+    else :
+        print("비밀번호가 일치하지 않습니다.")
+
+    guestbook_list = Guestbook.objects.all().order_by('-regdate')
+    context = {'guestbook_list' : guestbook_list}
+    return render(request, 'guestbook/index.html', context)
+
+def deleteform(request):
+    guestbook_name = request.POST.get('name', request.GET.get('name'))
+    context = {'guestbook_name' : guestbook_name }
+    return render(request, 'guestbook/deleteform.html', context)
