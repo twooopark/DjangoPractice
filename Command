@@ -1,14 +1,17 @@
-install django
+>> django 설치
+pip install django
 
+>> django project 생성 (Python_web)
 (venv) D:\pythonPycharm\web>django-admin startproject Python_web
 
-(venv) D:\pythonPycharm\web>cd Python_web
->> 하지말자...  결국 잘 안되서, 나중에 프로젝트 바로 밑 경로로 옮김 ㅠ
-
+>> app 생성 (emaillist)
 (venv) D:\pythonPycharm\web\Python_web>python manage.py startapp emaillist
 
+>> 경로 변경 (처음에 이미 생성한 pycharm 프로젝트안에 django 프로젝트를 생성해서...)
+>> 다음엔 django 프로젝트만 생성...? venv(지역라이브러리(?))를 사용중이라 어려울 듯.
+>> django를 전역라이브러리로 사용하고 있다면, 경로 변경해줄 필요 없을듯
 
->> setting.py
+>> 기본시간과 사용할 데이터베이스 설정 (setting.py)
 TIME_ZONE = 'Asia/Seoul'
 DATABASES = {
     'default': {
@@ -22,6 +25,7 @@ DATABASES = {
     }
 }
 
+>> mysql을 사용하려면 mysqlclient를 설치해야한다. ( 아래는 안했을 때, 오류메세지)
 django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.
 Did you install mysqlclient?
 
@@ -113,4 +117,4 @@ urls.py, views.py --> mapping
 >> 서버 실행
 (venv) D:\pythonPycharm\web>python manage.py runserver 0.0.0.0:8000
 
-
+>> 뷰와 탬플릿 연결,
