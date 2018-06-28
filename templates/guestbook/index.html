@@ -1,3 +1,4 @@
+{% load mathfilters %}
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,13 +24,13 @@
 	<br>
 	<table width=510 border=1>
 		<tr>
-			<td>{{ guestbook.id }}</td>
+			<td>{{ guestbook_list.count|add:1|sub:forloop.counter }}</td>
 			<td>{{ guestbook.name }}</td>
 			<td>{{ guestbook.regdate|date:'Y-m-d h:i:s' }}</td>
 			<td><a href="/guestbook/deleteform?id={{ guestbook.id }}">삭제</a></td>
 		</tr>
 		<tr>
-			<td colspan=4>{{ guestbook.message }}</td>
+			<td colspan=4>{{ guestbook.message|linebreaksbr }}</td>
 		</tr>
 	</table>
 	{% endfor %}
