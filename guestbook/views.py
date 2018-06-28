@@ -37,6 +37,7 @@ def delete(request):
     print("instance.password:", instance.password)
     if guestbook.password == instance.password :
         instance.delete()
+        print("Delete Complete!")
     else :
         print("비밀번호가 일치하지 않습니다.")
 
