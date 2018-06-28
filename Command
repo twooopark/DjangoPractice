@@ -57,8 +57,8 @@ INSTALLED_APPS = [
     'emaillist'##
 ]
 
-
->> Admin 페이지에 테이블 반영 (emaillist/admin.py)
+>>
+>> 모델을 등록시켜야 제대로 makemigrations 된다. (emaillist/admin.py)
 from emaillist.models import Emaillist
 admin.site.register(Emaillist)
 
@@ -84,3 +84,31 @@ Running migrations:
 
 
 urls.py, views.py --> mapping
+
+
+
+
+
+
+
+
+---------------GUEST BOOK----------------
+>> guestbook app 추가
+(venv) D:\pythonPycharm\web>python manage.py startapp guestbook
+
+>> Guestbook 클래스 추가 (models.py)
+
+>> 모델 등록 (admin.py)
+
+>> DB 적용(?)
+(venv) D:\pythonPycharm\web>python manage.py makemigrations
+
+>> 장고에도 적용(?)
+(venv) D:\pythonPycharm\web>python manage.py migrate
+
+>> mapping (urls.py, views.py, templates/....html)
+
+>> 서버 실행
+(venv) D:\pythonPycharm\web>python manage.py runserver 0.0.0.0:8000
+
+
